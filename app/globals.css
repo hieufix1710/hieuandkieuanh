@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,80 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll,
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+/* WeddingWishes.css */
+
+/* Container for the wishes with vertical scrolling */
+.wishes-container {
+  overflow-y: auto;
+  max-height: 100%; /* Adjust the max height as needed */
+}
+
+/* Wrapper for the wishes that will be scrolled */
+.wishes-wrapper {
+  animation-duration: 30s; /* Adjust the duration as needed for the scrolling speed */
+}
+
+/* Styling for individual wishes */
+.wish {
+  display: block;
+  margin-bottom: 10px; /* Adjust the spacing between wishes */
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+/* Animation for scrolling from bottom to top */
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Apply the scrolling animation when in the 'scrolling' state */
+.wishes-wrapper.scrolling {
+  animation-name: scrollAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Apply different styles when in the 'paused' state */
+.wishes-wrapper.paused {
+  animation-play-state: paused;
+  opacity: 1; /* Add any other styles to make it look paused */
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  background: grey;
+  margin-bottom: 30px;
 }
