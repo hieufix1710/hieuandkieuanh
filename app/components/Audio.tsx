@@ -53,58 +53,60 @@ export default function Audio() {
   };
 
   return (
-    <div className="sticky bottom-0 h-10 p-2 left-0 right-0">
-      <div className="flex flex-row justify-between">
-        <div className="">
-          <NextImage
-            className="next-image w-20 rounded-full hover:scale-x-100 hover:cursor-pointer"
-            src={pic3}
-            alt={"image"}
-          />
+    <div className="flex flex-row justify-between items-center w-full">
+      <div className="">
+        <div className="rounded-full overflow-hidden w-20">
+          {/* <NextImage
+              className="next-image hover:scale-x-100 hover:cursor-pointer bg-cover"
+              src={pic3}
+              alt={"image"}
+            /> */}
+        </div>
+        <div className="flex flex-col">
           <h2 className="font-bold">{audios[audioIndex].title}</h2>
           <p className="text-sm">{audios[audioIndex].artist}</p>
-          <div className="flex flex-row justify-between py-1">
+        </div>
+      </div>
+      <div className="grow">
+        <div className="flex flex-row justify-center gap-3">
+          <div>
             <button
               disabled={audios.length === 1}
               className="disabled:text-gray-400"
               onClick={() => setAudioIndex((audioIndex - 1) % audios.length)}
             >
-              <BackwardIcon className="w-5" />
+              <BackwardIcon className="w-7" />
             </button>
-            <div className="Pause-Play-Button" onClick={handlePausePlayClick}>
-              {isPlay ? (
-                <button className="rounded-full right-1">
-                  <PauseIcon className="w-5" />
-                </button>
-              ) : (
-                <button className="rounded-full">
-                  <PlayIcon className="w-5" />
-                </button>
-              )}
-            </div>
+          </div>
+          <div className="Pause-Play-Button" onClick={handlePausePlayClick}>
+            {isPlay ? (
+              <button className="rounded-full right-1">
+                <PauseIcon className="w-7" />
+              </button>
+            ) : (
+              <button className="rounded-full">
+                <PlayIcon className="w-7" />
+              </button>
+            )}
+          </div>
+          <div>
             <button
               disabled={audios.length === 1}
               className="disabled:text-gray-400"
               onClick={() => setAudioIndex((audioIndex + 1) % audios.length)}
             >
-              <ForwardIcon className="w-5" />
+              <ForwardIcon className="w-7" />
             </button>
           </div>
-          <audio
-            ref={audioRef}
-            src={audios[audioIndex].src}
-            onLoadedData={handleLoadedData}
-            onTimeUpdate={() => setCurrentTime(audioRef.current.currentTime)}
-            onEnded={() => setIsPlay(false)}
-          />
-        </div>
-        <div>
-          <ArrowSmallUpIcon
-            className="w-7 cursor-pointer"
-            onClick={() => scrollTop()}
-          />
         </div>
       </div>
+      <audio
+        ref={audioRef}
+        src={audios[audioIndex].src}
+        onLoadedData={handleLoadedData}
+        onTimeUpdate={() => setCurrentTime(audioRef.current.currentTime)}
+        onEnded={() => setIsPlay(false)}
+      />
     </div>
   );
 }

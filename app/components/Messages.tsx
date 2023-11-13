@@ -11,7 +11,7 @@ import { QrCodeIcon } from "@heroicons/react/24/outline";
 export default function Messages() {
   const [messages, setMessages] = useState<any>([]);
   const [showQR, setShowQR] = useState(false);
-  const [showBtnOpenQR, setShowButtonQR] = useState(false);
+  const [showBtnOpenQR, setShowButtonQR] = useState(true);
 
   useEffect(() => {
     fetchWishMessages().then(({ data, error }) => {

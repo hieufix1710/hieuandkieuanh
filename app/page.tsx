@@ -6,9 +6,9 @@ import Nav from "./components/Nav";
 import InviteInfo from "./components/HoldInfo";
 import Messages from "./components/Messages";
 import Gallery from "./components/Gallery";
-import Audio from "./components/Audio";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
+import Bottom from "./components/Bottom";
 // import useScroll from "./hooks/useScroll";
 const queryClient = new QueryClient();
 
@@ -30,8 +30,8 @@ export default function Home() {
           <InviteInfo />
           <Messages />
           <Gallery />
-          <Audio />
         </div>
+        <Bottom />
       </div>
     </QueryClientProvider>
   );

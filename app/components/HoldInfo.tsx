@@ -14,7 +14,7 @@ export default function HoldInfo() {
           Thông tin buổi lễ
         </h1>
       </div>
-      <div className="w-full text-center text-red-500">
+      <div className="w-full text-center text-red-600">
         <p
           className="h2 mt-5 ww-title"
           style={{ fontFamily: "Noto Serif KR, serif", fontSize: "1.0em" }}

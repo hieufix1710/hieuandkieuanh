@@ -13,7 +13,7 @@ export default function Couple() {
         <div className="col-span-1 text-center">
           <div>
             <h2
-              className="py-2 text-xl"
+              className="py-2 text-xl text-red-600"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               Nguyễn Văn Hiếu
@@ -28,7 +28,7 @@ export default function Couple() {
         <div className="col-span-1 text-center">
           <div>
             <h2
-              className="py-2 text-xl"
+              className="py-2 text-xl text-red-600"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               Lương Kiều Anh
